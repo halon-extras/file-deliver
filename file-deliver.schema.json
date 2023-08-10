@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "File-deliver schema",
+    "additionalProperties": false,
+    "properties": {
+        "path": {
+            "type": "string",
+            "description": "Path to write files"
+        },
+        "tmppath": {
+            "type": "string",
+            "description": "Path for temporary files (default is same as path)"
+        },
+        "threads": {
+            "type": "number",
+            "description": "Number of worker threads",
+            "default": 1
+        },
+        "fsync": {
+            "type": "boolean",
+            "description": "Sync file on disk before 250 OK",
+            "default": true
+        }
+    }
+}
+  

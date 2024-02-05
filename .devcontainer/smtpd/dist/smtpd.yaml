@@ -1,25 +1,22 @@
-version: "5.8"
-servers:
-  - id: default
-    listeners:
-      - port: 25
-        address: 127.0.0.1
 environment:
-  uuid:
-    version: 4
   controlsocket:
+    chmod: '0660'
     group: staff
-    chmod: "0660"
   privdrop:
-    user: halon
     group: halon
-  umask: "0027"
+    user: halon
   rlimit:
     nofile: 70000
-  syslog:
-    mask: 192
+  umask: '0027'
+  uuid:
+    version: 4
 plugins:
-  - id: file-deliver
-    path: /build/file-deliver.so
-    config:
-      path: /file-deliver/test-folder
+- config:
+    path: /file-deliver/test-folder
+  id: file-deliver
+servers:
+- id: default
+  listeners:
+  - address: 127.0.0.1
+    port: 25
+version: '5.8'

@@ -18,6 +18,5 @@ environment:
     nofile: 70000
 plugins:
   - id: file-deliver
-    path: /build/file-deliver.so
     config:
       path: /file-deliver/test-folder

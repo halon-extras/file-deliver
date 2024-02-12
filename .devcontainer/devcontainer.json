@@ -6,10 +6,14 @@
 	"workspaceFolder": "/file-deliver",
 	"service": "halon-smtpd",
 	"overrideCommand": false,
-	"extensions": [
-		"Halon.vscode-halon",
-		"Halon.hsl-linter",
-		"Halon.hsl-debug",
-		"ms-vscode.cpptools"
-	]
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Halon.vscode-halon",
+				"Halon.hsl-linter",
+				"Halon.hsl-debug",
+				"ms-vscode.cpptools"
+			]
+		}
+	}
 }

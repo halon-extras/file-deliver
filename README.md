@@ -53,7 +53,7 @@ transportgroups:
 Plugin options are:
 
 * fsync (boolean) default true
-* filename (string) default is `transactionid_queueid.eml` (one level of sub-folders is supported)
+* filename (string) default is `transactionid_queueid.eml` (sub-folders are supported)
 
 ```
 Try([

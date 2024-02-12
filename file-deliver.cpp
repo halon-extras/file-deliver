@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <string.h>
+#include <mkdirp.hpp>
 
 struct halon {
 	HalonDeliverContext *hdc;
@@ -78,9 +79,8 @@ void fcopy()
 					errno = EINVAL;
 					goto bad;
 				}
-				if (mkdir(a->filename2.substr(0, slash).c_str(), 0777) != 0)
-					if (errno != EEXIST)
-						goto bad;
+				if (!mkdirp(a->filename2.substr(0, slash), 0777))
+					goto bad;
 				if (rename(a->filename.c_str(), a->filename2.c_str()) == 0)
 					goto good;
 			}

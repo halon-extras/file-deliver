@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
-PROJECT("file-deliver" VERSION 1.0.0)
+PROJECT("file-deliver" VERSION 1.1.0)
 
  # RPM/DEB and CENTOS7/CENTOS8/ROCKY9/UBU1804/UBU2004/UBU2204
 IF (EXISTS "${CMAKE_CURRENT_BINARY_DIR}/OSRELEASE.txt")
@@ -32,11 +32,13 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-std=c++17 -Wall -Wvla -Wshadow -Wconversion -Wno-s
 
 ADD_LIBRARY(file-deliver SHARED
 	file-deliver.cpp
+	mkdirp.cpp
 )
 
 SET_TARGET_PROPERTIES(file-deliver PROPERTIES PREFIX "")
 
 INCLUDE_DIRECTORIES(
+	${CMAKE_CURRENT_SOURCE_DIR}
 	/opt/halon/include
 )
 

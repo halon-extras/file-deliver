@@ -91,6 +91,10 @@ bad:
 			goto done;
 		}
 good:
+		{
+			short int status = 250;
+			HalonMTA_deliver_setinfo(a->hdc, HALONMTA_RESULT_CODE, &status, 0);
+		}
 		HalonMTA_deliver_setinfo(a->hdc, HALONMTA_RESULT_REASON, "FILE", 0);
 done:
 		close(a->outfd);
